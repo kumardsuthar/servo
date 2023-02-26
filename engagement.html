@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="invi.css"> -->
+  <script src="html2canvas.js"></script>
+
+<!-- download java  script function -->
+  <!--  -->
+  <script type="text/javascript">
+
+
+
+    function downloadimage() {
+      let r=`
+      <div id="engagementcard">
+            <div class="row">
+                <div class="col-12">
+                    <img src="img/engagement1.png" alt="" id="img">
+                    <h4>YOU ARE INVITED TO THE</h4>
+                    <h2 style="margin: 30px auto 7px auto;">ENGAGEMENT</h2>
+                    <h2>PARTY</h2>
+                    <h5>OF</h5>
+
+                    <h1 style="margin: 20px auto;">${nameb.value} & ${nameg.value}</h1>
+
+                    <h5 style="margin: 10px auto;">${day.value}</h5>
+                    <h5 style="margin: 10px 150px;background-color: rgb(43, 39, 39);color: white;padding: 5px;border-radius: 20px;">${date.value}st ${month.value} ${year.value}</h5>
+                    <h5 style="margin: 10px auto;">${time.value}</h5>
+
+                    <h4>address</h4>
+                </div>
+
+                 <div class="col-7" id="div1">
+                    <p>The young couple is about to turn a new chapter of the life and they seek your blessing.</p>
+                    <p>Please be at the Engagement party to do the honors to the new couple</p>
+                    <h5>Two loving hearts are getting united and making a promise to stay in love forever.</h5>
+                 </div>
+                 <div class="col-5" id="div2">
+                    <img src="img/engagement2.png" alt="" id="img2">
+                 </div>
+            </div>
+        </div>
+      `
+      
+      var container = document.getElementById("engagement");
+      container.innerHTML = r;
+         
+        container.style.cssText="display:block";
+        html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+            var link = document.createElement("a");
+            document.body.appendChild(link);
+            link.download = "html_image.png";
+            link.href = canvas.toDataURL();
+            link.target = '_blank';
+            link.click();
+            window.location.reload();   
+            location.href="index.html"             
+        });
+    }
+
+</script>
+
+<title>Engagement card</title>
+<style>
+  #home-btn{
+            margin: 20px 20px;
+        }
+        #home-btn i{
+            font-size: 20px;
+            
+        }
+        #home-btn a{
+            color: white;
+            font-size: 18px;
+            padding: 2px 4px;
+            text-decoration: none;
+
+        }
+       #engagement{
+        width: 600px;
+        /* padding: 10px; */
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        /* margin: 2px auto; */
+        display: none;
+       }
+       #engagementcard{
+        width: 600px;
+        height: fit-content;
+        margin-top: 20px;
+
+        /* margin-top: 20px; */
+        border-radius: 10px;
+        /* background-image: url('engagementback2.jpg'); */
+        background-color: rgb(218, 209, 209);
+        text-align: center;
+       }
+       #img{
+        height: 100px;
+        width: 100px;
+        margin: 20px auto;
+       }
+       #img2{
+        height: 280px;
+        width: 230px;
+       }
+       #div1{
+        margin: 60px auto;
+        padding: 10px 50px;
+       }
+       #div2{
+        margin-top: 30px;
+       }
+       #content-upper{
+        margin: 2px 30px;
+       }
+       .btn{
+        display: block;
+        margin: 30px auto;
+       }
+</style>
+</head>
+<body>
+
+  <div id="home-btn">
+    <button class="btn btn-danger"><i class="fa fa-home "><a href="index.html">Home</a></i></button>
+</div>
+  <!-- <div class="container-fluid " id="headerbg">
+    <div class="row header my-4">
+        <div class="col-md-6 mx-5 logo col-12">
+            <span>
+                <img src="logo.png" alt="logo" id="logoimg"> </span>
+            <span>
+                <h4>servo</h4>
+                <i class="fa fa-bars" id="menubtn"></i>
+            </span>
+        </div>
+        <div class="col-md-6" id="df">
+            <ul>
+                <a href="index.html" class="link"> Home</a href="#">
+                <a href="about.html" class="link">About Us</a href="#">
+                <a href="sevices.html" class="link">Services</a href="#">
+                <a href="contactus.html" class="link" id="clink">Contact Us</a href="#">
+                <a href="#" class="slink"><i class="fa fa-instagram"></i></a href="#">
+                <a href="#" class="slink"><i class="fa fa-telegram"></i></a href="#">
+                <a href="#" class="slink"><i class="fa fa-whatsapp"></i></a href="#">
+
+            </ul>
+        </div>
+    </div>
+</div> -->
+
+    <div id="engagement">
+       
+    </div>
+
+    <div id="content-upper">
+        <h2 style="margin:40px auto auto auto;">welcome</h2>
+        <h4 style="margin: 10px auto;">Fill Below Details And Get Your Wedding Invitation Card</h4>
+      </div>
+        <div class="row m-4">
+        <div class="form-floating my-3 col-12 col-lg-6">
+          <input type="text" class="form-control rounded-1 w-100" id="nameb" placeholder="name@example.com">
+          <label for="nameb">ENTER BRIDGE NAME</label>
+        </div>
+    
+        <div class="form-floating my-3 col-12 col-lg-6">
+          <input type="text" class="form-control rounded-1 w-100" id="nameg" placeholder="name@example.com">
+          <label for="nameg">ENTER GROOM NAME</label>
+        </div>
+
+        <div class="form-floating my-3 col-12 col-lg-3">
+            <input type="text" class="form-control rounded-1 w-100" id="day" placeholder="name@example.com">
+            <label for="day">ENTER DAY OF ENGAGEMENT</label>
+          </div>
+
+        <div class="form-floating my-3 col-12 col-lg-2">
+          <input type="text" class="form-control rounded-1 w-100" id="date" placeholder="name@example.com">
+          <label for="date">ENTER DATE OF ENGAGEMENT</label>
+        </div>
+    
+        <div class="form-floating my-3 col-12 col-lg-3">
+          <input type="text" class="form-control rounded-1 w-100" id="month" placeholder="name@example.com">
+          <label for="month">ENTER MONTH OF ENGAGEMENT</label>
+        </div>
+    
+        <div class="form-floating my-3 col-12 col-lg-2">
+          <input type="text" class="form-control rounded-1 w-100" id="year" placeholder="name@example.com">
+          <label for="year">ENTER YEAR OF ENGAGEMENT</label>
+        </div>
+    
+        <div class="form-floating my-3 col-12 col-lg-2">
+          <input type="text" class="form-control rounded-1 w-100" id="time" placeholder="name@example.com">
+          <label for="time" class="form-label">ENTER TIME</label>
+        </div>
+      </div>
+        <button onclick="downloadimage()" class="clickbtn btn btn-outline-primary "><i class="fa fa-download"> Click To Download Engagement Invitation</i></button>
+    
+
+        <footer>
+          <div class="row footer">
+              <div class="col-md-4 col-12">
+                  <h1 class="logof">servo</h1>
+                  <p style="margin-top: 30px;padding: 0px 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam beatae porro ut tempore, quisquam, sit molestias qui architecto dolor facere, officia nobis iusto commodi doloremque minus. Sed perferendis adipisci itaque!
+                  </p>
+              </div>
+              <div class="col-md-3 col-12 ls">
+                  <h4 id="srh">Service</h4>
+                  <p> <a href="certi.html" class="flink">certificate</a> <br> </p>
+                  <p><a href="businesscard.html" class="flink">businesscard</a><br> </p>
+                  <p><a href="idcardmain.html" class="flink">id card</a><br> </p>
+                  <p><a href="javascript:void(0)" class="flink">Goverment card</a> <br></p>
+                  <p><a href="invitationmain.html" class="flink">Invitation card</a> <br></p>
+                  <p><a href="resume.html" class="flink">resume</a> <br></p>
+              </div>
+              <div class="col-md-2 col-12 ls">
+                  <h4 style="margin-bottom: 20px;">Links</h4>
+                  <p> <a href="index.html" class="flink">Home</a> <br> </p>
+                  <p><a href="about.html" class="flink">About</a><br> </p>
+                  <p><a href="contactus.html" class="flink">Contact us</a><br> </p>
+                  <h4 style="margin:30px auto;">Address</h4>
+                  <p>sumerpur</p>
+                  <p>rajasthan pali (306902) </p>
+              </div>
+              <div class="col-md-2 col-12 ls">
+                  <h4 id="sh">social media</h4>
+                  <li class="fflink">
+                      <a href="https://wa.me/7297834350?text=what%20can%20i%20help%20you%20%3F">
+                          <i class="fa fa-whatsapp"></i>
+                      </a>
+                  </li>
+                  <li class="fflink">
+                      <a href="https://msng.link/o/?d_sthr02=ig">
+  
+                      <i class="fa fa-instagram"></i>
+                  </a>
+                  
+                  </li >
+                  <li class="fflink">
+                      <a href="https://msng.link/o/?7297834350=t g">
+                      
+                      <i class="fa fa-telegram"></i>
+                  </a>
+                  </li>
+                  <li class="fflink">
+                      <a href="mailto:dilipkumarsuthar176@gmail.com">
+                      
+                      <i class="fa fa-envolope"></i>
+                  </a>
+                  </li>
+  
+              </div>
+  
+          </div>
+      </footer>
+</body>
+</html>

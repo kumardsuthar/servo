@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <label for="img"><i class="fa fa-plus" style="border: 2px solid black;padding: 25px;cursor: pointer;font-size: 24px;"></i></label>
+    <input type="file" name="" id="img" style="display: none;visibility: none;" onchange="getImage(this.value);">
+
+    <div id="display-image">
+
+    </div>
+
+    <script>
+        function getImage(imagename){
+            var newimg = imagename.replace(/^.*\\/,"");
+            $('#display-image').html(newimg);
+        }
+    </script>
+<!--    
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var selDiv = "";
+      var storedFiles = [];
+      $(document).ready(function () {
+        $("#img").on("change", handleFileSelect);
+        selDiv = $("#selectedBanner");
+      });
+
+      function handleFileSelect(e) {
+        var files = e.target.files;
+        var filesArr = Array.prototype.slice.call(files);
+        filesArr.forEach(function (f) {
+          if (!f.type.match("image.*")) {
+            return;
+          }
+          storedFiles.push(f);
+
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var html =
+              '<img src="' +
+              e.target.result +
+              "\" data-file='" +
+              f.name +
+              "alt='Category Image' height='200px' width='200px'>";
+            selDiv.html(html);
+          };
+          reader.readAsDataURL(f);
+        });
+      }
+    </script> -->
+  </body>
+</html>

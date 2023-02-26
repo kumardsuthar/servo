@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="html2canvas.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
+    <script type="text/javascript">
+
+  
+
+        function downloadimage() {
+            let name = document.getElementById("name");
+          let r = `
+          <h2 id="certi-head">CERTIFICATE</h2>
+           <h3>OF ACHIEVEMENT</h3>
+
+           <h5>This certificate is proudly presented to</h5>
+           <h1 id="student-name">${name.value}</h1> 
+
+           <h2 id="course">${cor.value}</h2>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum praesentium id sunt aperiam consequatur dignissimos error possimus facilis quidem fugit exercitationem est saepe ipsa nesciunt nostrum iusto, quod at. Delectus.</p>
+
+           <div class="sign">
+            <div>
+                <h4>Signature</h4>
+            </div>
+            <div>
+                <img src="img/certimark.png" alt="varified" class=" img">
+            </div>
+            <div>
+                <h4>Signature</h4>
+            </div>
+           </div>
+           <div id="border"> </div>
+          `;
+          var container = document.getElementById("certificate");
+          container.innerHTML = r;
+             
+            container.style.cssText="display:block";
+            html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+                var link = document.createElement("a");
+                document.body.appendChild(link);
+                link.download = "html_image.png";
+                link.href = canvas.toDataURL();
+                link.target = '_blank';
+                link.click();
+                window.location.reload();   
+                
+                location.href="index.html";
+            });
+        }
+
+    </script>
+    <title>certificate design</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #home-btn{
+            margin: 20px 20px;
+        }
+        #home-btn i{
+            font-size: 20px;
+            
+        }
+        #home-btn a{
+            color: white;
+            font-size: 18px;
+            padding: 2px 4px;
+            text-decoration: none;
+        }
+        #certi-head{
+            margin:10px auto;
+        }
+        h5{
+            margin: 10px auto;
+        }
+        #student-name{
+            margin: 30px auto;
+        }
+        #course{
+            margin: 20px auto;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        
+        #certificate{
+            
+            /* border: 10px double rgb(22, 4, 58); */
+
+            /* padding: 50px; */
+             width:700px;
+            text-align: center;
+            position: absolute;
+            height: fit-content;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            /* visibility: hidden; */
+            display: none;
+        }
+        .heading{
+            padding: 10px 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: black;
+       }
+        .sign{
+            display: flex;
+            flex-direction: row;
+            margin:30px auto;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+        .sign .img{
+            width: 100px;
+            height: 100px;
+            border-radius:  50px;
+        }
+        .inp{
+            margin:40px 50px;
+        }
+        .btn{
+            margin-left: 50px;
+            margin-bottom: 20px;
+        }
+        .ls i{
+            color: white;
+        }
+        #border{
+            height: 20px;
+            width: auto;
+            background: darkblue;
+margin-top: 40px;
+/* border-radius: 20px; */
+clip-path: polygon(100% 69%, 0% 100%, 100% 100%);
+
+        }
+    
+    </style>
+</head>
+<body>
+<!-- 
+    <div class="container-fluid " id="headerbg">
+        <div class="row header my-4">
+            <div class="col-md-6 mx-5 logo col-12">
+                <span>
+                    <img src="logo.png" alt="logo" id="logoimg"> </span>
+                <span>
+                    <h4>servo</h4>
+                    <i class="fa fa-bars" id="menubtn"></i>
+                </span>
+            </div>
+            <div class="col-md-6" id="df">
+                <ul>
+                    <a href="index.html" class="link"> Home</a href="#">
+                    <a href="about.html" class="link">About Us</a href="#">
+                    <a href="sevices.html" class="link">Services</a href="#">
+                    <a href="contactus.html" class="link" id="clink">Contact Us</a href="#">
+                    <a href="#" class="slink"><i class="fa fa-instagram"></i></a href="#">
+                    <a href="#" class="slink"><i class="fa fa-telegram"></i></a href="#">
+                    <a href="#" class="slink"><i class="fa fa-whatsapp"></i></a href="#">
+
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+     <div id="home-btn">
+        <button class="btn btn-danger"><i class="fa fa-home "><a href="index.html">Home</a></i></button>
+    </div> 
+    
+    <div class="">
+        <div>
+            <h2 class="heading">Download Your Certificate</h2>
+            <h3 class="heading">Certificate generator is a tool to generate certificates. It works with your existing certificate and creates new certificates using the new standard.</h3>
+
+        </div>
+        <div class="form-floating inp">
+            <input type="text" class="form-control rounded-1 w-100 " id="name" placeholder="name@example.com">
+            <label for="name">Enter The Your Name</label>
+          </div>
+
+          <div class="form-floating inp">
+            <input type="text" class="form-control rounded-1 w-100" id="cor" placeholder="name@example.com">
+            <label for="cor">Enter The Your course</label>
+          </div>
+        <div id="certificate">
+          
+        </div>
+    
+    </div>
+
+    <button onclick="downloadimage()" class="clickbtn btn btn-outline-primary my-3"><i class="fa fa-download"></i> Click To Download Certificate</button>
+    
+
+    <footer>
+        <div class="row footer">
+            <div class="col-md-4 col-12">
+                <h1 class="logof">servo</h1>
+                <p style="margin-top: 30px;padding: 0px 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam beatae porro ut tempore, quisquam, sit molestias qui architecto dolor facere, officia nobis iusto commodi doloremque minus. Sed perferendis adipisci itaque!
+                </p>
+            </div>
+            <div class="col-md-3 col-12 ls">
+                <h4 id="srh">Service</h4>
+                <p> <a href="certi.html" class="flink">certificate</a> <br> </p>
+                <p><a href="businesscard.html" class="flink">businesscard</a><br> </p>
+                <p><a href="idcardmain.html" class="flink">id card</a><br> </p>
+                <p><a href="javascript:void(0)" class="flink">Goverment card</a> <br></p>
+                <p><a href="invitationmain.html" class="flink">Invitation card</a> <br></p>
+                <p><a href="resume.html" class="flink">resume</a> <br></p>
+            </div>
+            <div class="col-md-2 col-12 ls">
+                <h4 style="margin-bottom: 20px;">Links</h4>
+                <p> <a href="index.html" class="flink">Home</a> <br> </p>
+                <p><a href="about.html" class="flink">About</a><br> </p>
+                <p><a href="contactus.html" class="flink">Contact us</a><br> </p>
+                <h4 style="margin:30px auto;">Address</h4>
+                <p>sumerpur</p>
+                <p>rajasthan pali (306902) </p>
+            </div>
+            <div class="col-md-2 col-12 ls">
+                <h4 id="sh">social media</h4>
+                <li class="fflink">
+                    <a href="https://wa.me/7297834350?text=what%20can%20i%20help%20you%20%3F" target="_blank">
+                        <i class="fa fa-whatsapp"></i>
+                    </a>
+                </li>
+                <li class="fflink">
+                    <a href="https://msng.link/o/?d_sthr02=ig">
+
+                    <i class="fa fa-instagram"></i>
+                </a>
+                
+                </li >
+                <li class="fflink">
+                    <a href="https://msng.link/o/?7297834350=t g">
+                    
+                    <i class="fa fa-telegram"></i>
+                </a>
+                </li>
+                <li class="fflink">
+                    <a href="mailto:dilipkumarsuthar176@gmail.com">
+                    
+                    <i class="fa fa-envolope"></i>
+                </a>
+                </li>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    
+    
+
+</body>
+</html>

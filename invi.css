@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Permanent+Marker&family=Shadows+Into+Light&display=swap');
+
+
+h2{
+    font-family: 'Rubik Bubbles', cursive;
+}
+h5{
+    font-family: 'Mukta', sans-serif;
+}
+h1{
+    font-family: 'Mukta', sans-serif;
+font-family: 'Shadows Into Light', cursive;
+font-size: 60px;
+color: #fff304;
+}
+h6{
+    font-family: 'Mukta', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Shadows Into Light', cursive;
+}

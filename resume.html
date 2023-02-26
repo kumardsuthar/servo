@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="html2canvas.js"></script>
+
+    <!--  -->
+
+    <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
+    <script type="text/javascript">
+
+
+
+        function downloadimage() {
+
+            let r = `
+            <div id="resume">
+            <div class="row">
+                <div class="col-12 head">
+                    <h3>${name.value}</h3>
+                    <p>${post.value}</p>
+                    <img src="img/user.png" alt="profile-img" class="img">
+                </div>
+
+                <div class="col-4 r1 br">
+                    <h6>
+                        <i></i> ${mob1.value}
+                    </h6>
+                    <h6>
+                        <i></i> ${mob2.value}
+                    </h6>
+                    <h6>
+                        <i></i> ${add.value}
+                    </h6>
+                    <h6>
+                        <i></i> ${purl.value}
+                    </h6>
+                </div>
+
+                <div class="col-8 r1">
+                    <h5>PROFILE</h5>
+                    <P>${profile.value}</P>
+                </div>
+
+                <div class="col-4 r1 br">
+                    <h5>SKILLS</h5>
+                    <p>${sk1.value}</p>
+                    <p>${sk2.value}</p>
+                    <p>${sk3.value}</p>
+                    <p>${sk4.value}</p>
+                    <p>${sk5.value}</p>
+                    <p>${sk6.value}</p>
+
+                </div>
+
+                <div class="col-8 r1">
+                    <h5>EDUCATION</h5>
+
+                    <h6>SECONDARY SCHOOL</h6>
+                    <P>${ssch.value}</P>
+                    <P>${sschy.value}</P>
+
+                    <h6>BACHELOR OF TECHNOLOGY</h6>
+                    <P>${colname.value}</P>
+                    <P>${qualification.value}</P>
+                </div>
+
+                <div class="col-12">
+                    <h6 style="text-align: left;margin-left: 20px;">Exprience</h6>
+                    <p style="margin-left: 30px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Exercitationem, sed rerum dicta nulla, eum in dolorem, mollitia vero aperiam culpa recusandae?
+                        Recusandae in natus explicabo illum. Facere nulla nostrum est.</p>
+                </div>
+            </div>
+        </div>
+          `;
+            var container = document.getElementById("resumecard");
+            container.innerHTML = r;
+
+            container.style.cssText = "visibility:visible";
+            html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+                var link = document.createElement("a");
+                document.body.appendChild(link);
+                link.download = "html_image.png";
+                link.href = canvas.toDataURL();
+                link.target = '_blank';
+                link.click();
+                window.location.reload();
+                location.href="index.html"             
+            });
+        }
+
+    </script>
+    <!--  -->
+
+    <title>RESUME download</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        #home-btn{
+            margin: 20px 20px;
+        }
+        #home-btn i{
+            font-size: 20px;
+            
+        }
+        #home-btn a{
+            color: white;
+            font-size: 18px;
+            padding: 2px 4px;
+            text-decoration: none;
+
+        }
+        #resumecard{
+            width: 600px;
+            padding: 10px 100px 10px 10px;
+            /* overflow-x: hidden; */
+            /* padding: 40px; */
+        }
+
+        #resume{
+            width: 600px;
+            padding: 10px 30px 10px 20px;
+            /* overflow-x: hidden; */
+            /* margin-top: 20px; */
+            /* margin: 40px; */
+            /* padding: 0 10px; */
+            border-radius: 20px 20px 0 0;
+            background-color: rgba(233, 231, 227, 0.649);
+
+
+        }
+
+        .head {
+            background-color: rgba(201, 167, 167, 0.882);
+            height: 100px;
+            margin-bottom: 60px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        .img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            float: right;
+            margin: -50px 20px 0 0;
+        }
+
+        .r1 {
+            /* box-shadow: 1px 2px 2px black; */
+            margin-top: 20px;
+            padding: 0;
+            text-align: center;
+        }
+
+        .br {
+            border-right: 3px solid rgb(129, 4, 4);
+            text-align: center;
+
+        }
+
+        .footer {
+            margin-top: 40px;
+        }
+
+        h6 {
+            text-align: center;
+            margin: 10px 0px;
+        }
+
+        h5 {
+            margin-left: 10px;
+        }
+        .details{
+            margin: 10px 50px;
+         
+        }
+        .fflink{
+            color: rgb(231, 213, 213);
+        }
+        li{
+            margin-bottom: 15px;
+        }
+        .btn{
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="home-btn">
+        <button class="btn btn-danger"><i class="fa fa-home "><a href="index.html">Home</a></i></button>
+    </div>
+
+    <!-- <div class="container-fluid " id="headerbg">
+        <div class="row header my-4">
+            <div class="col-md-6 mx-5 logo col-12">
+                <span>
+                    <img src="logo.png" alt="logo" id="logoimg"> </span>
+                <span>
+                    <h4>servo</h4>
+                    <i class="fa fa-bars" id="menubtn"></i>
+                </span>
+            </div>
+            <div class="col-md-6" id="df">
+                <ul>
+                    <a href="index.html" class="link"> Home</a href="#">
+                    <a href="about.html" class="link">About Us</a href="#">
+                    <a href="sevices.html" class="link">Services</a href="#">
+                    <a href="contactus.html" class="link" id="clink">Contact Us</a href="#">
+                    <a href="#" class="slink"><i class="fa fa-instagram"></i></a href="#">
+                    <a href="#" class="slink"><i class="fa fa-telegram"></i></a href="#">
+                    <a href="#" class="slink"><i class="fa fa-whatsapp"></i></a href="#">
+
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="resumecard">
+       
+    </div>
+
+    <div class="row details">
+        <h2>Welcome</h2>
+        <h5 style="margin-bottom: 20px;">Just fill below details and get your resume in second</h5>
+        <div class="col-md-6 col-12">
+            <label for="name" class="form-label">Enter your name</label>
+            <input type="text" name="" id="name" class="form-control ">
+        </div>
+
+        <div class="col-md-6 col-12">
+            <label for="post" class="form-label">Enter your post</label>
+            <input type="text" name="" id="post" class="form-control ">
+        </div>
+
+        <div class="col-md-3 col-12">
+            <label for="mob1" class="form-label">Enter your mob1</label>
+            <input type="number" name="" id="mob1" class="form-control">
+        </div>
+        <div class="col-md-3 col-12">
+            <label for="mob2" class="form-label">Enter your mob2</label>
+            <input type="number" name="" id="mob2" class="form-control">
+        </div>
+
+        <div class="col-md-3 col-12">
+            <label for="add" class="form-label">Enter your Address</label>
+            <input type="text" name="" id="add" class="form-control">
+        </div>
+
+        <div class="col-md-3 col-12">
+            <label for="purl" class="form-label">Portfolio url</label>
+            <input type="url" name="" id="purl" class="form-control">
+        </div>
+
+        <div class="col-md-12 col-12 my-5">
+            <!-- <input type="text" name="" id="mob1" class="form-control"> -->
+            <textarea name="" id="profile" cols="2" rows="3" style="width: 100%;padding: 10px;"
+                placeholder="Enter about your profile"></textarea>
+
+        </div>
+            <h4>Enter your Skills</h4>
+        <div class="col-md-4 col-12">
+            <label for="sk1" class="form-label">Skill 1</label>
+            <input type="url" name="" id="sk1" class="form-control">
+        </div>
+
+        <div class="col-md-4 col-12">
+            <label for="sk2" class="form-label">Skill 2</label>
+            <input type="url" name="" id="sk2" class="form-control">
+        </div>
+
+        <div class="col-md-4 col-12">
+            <label for="sk3" class="form-label">Skill 3</label>
+            <input type="url" name="" id="sk3" class="form-control">
+        </div>
+
+        <div class="col-md-4 col-12">
+            <label for="sk4" class="form-label">Skill 4</label>
+            <input type="url" name="" id="sk4" class="form-control">
+        </div>
+
+        <div class="col-md-4 col-12">
+            <label for="sk5" class="form-label">Skill 5</label>
+            <input type="url" name="" id="sk5" class="form-control">
+        </div>
+
+        <div class="col-md-4 col-12">
+            <label for="sk6" class="form-label">Skill 6</label>
+            <input type="url" name="" id="sk6" class="form-control">
+        </div>
+   
+    <!-- <h4>Qualification</h4> -->
+
+    <h4 style="width: 100%;">About Education</h4> <br>
+    <div class="col-md-6 col-12">
+        <label for="ssch" class="form-label">Secondary School name</label>
+        <input type="text" name="" id="ssch" class="form-control">
+    </div>
+    <div class="col-md-6 col-12">
+        <label for="sschy" class="form-label"> Year</label>
+        <input type="text" name="" id="sschy" class="form-control">
+    </div>
+
+    <h4 style="width: 100%;">High Education</h4>
+
+    <div class="col-md-4 col-12">
+        <label for="colname" class="form-label">College name</label>
+        <input type="text" name="" id="colname" class="form-control">
+    </div>
+    <div class="col-md-4 col-12">
+        <label for="Qualification" class="form-label">About Qualification</label>
+        <input type="text" name="" id="qualification" class="form-control">
+    </div>
+    <div class="col-md-4 col-12">
+        <label for="coly" class="form-label"> Year</label>
+        <input type="text" name="" id="coly" class="form-control">
+    </div>
+   
+</div>
+
+
+<button onclick="downloadimage()" class="clickbtn btn btn-outline-primary "><i class="fa fa-download"></i> Click To Download Certificate</button>
+    
+<footer>
+    <div class="row footer">
+        <div class="col-md-4 col-12">
+            <h1 class="logof">servo</h1>
+            <p style="margin-top: 30px;padding: 0px 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam beatae porro ut tempore, quisquam, sit molestias qui architecto dolor facere, officia nobis iusto commodi doloremque minus. Sed perferendis adipisci itaque!
+            </p>
+        </div>
+        <div class="col-md-3 col-12 ls">
+            <h4 id="srh">Service</h4>
+            <p> <a href="certi.html" class="flink">certificate</a> <br> </p>
+            <p><a href="businesscard.html" class="flink">businesscard</a><br> </p>
+            <p><a href="idcardmain.html" class="flink">id card</a><br> </p>
+            <p><a href="javascript:void(0)" class="flink">Goverment card</a> <br></p>
+            <p><a href="invitationmain.html" class="flink">Invitation card</a> <br></p>
+            <p><a href="resume.html" class="flink">resume</a> <br></p>
+        </div>
+        <div class="col-md-2 col-12 ls">
+            <h4 style="margin-bottom: 20px;">Links</h4>
+            <p> <a href="index.html" class="flink">Home</a> <br> </p>
+            <p><a href="about.html" class="flink">About</a><br> </p>
+            <p><a href="contactus.html" class="flink">Contact us</a><br> </p>
+            <h4 style="margin:30px auto;">Address</h4>
+            <p>sumerpur</p>
+            <p>rajasthan pali (306902) </p>
+        </div>
+        <div class="col-md-2 col-12 ls">
+            <h4 id="sh">social media</h4>
+            <li class="fflink">
+                <a href="https://wa.me/7297834350?text=what%20can%20i%20help%20you%20%3F" target="_blank">
+                    <i class="fa fa-whatsapp"></i>
+                </a>
+            </li>
+            <li class="fflink">
+                <a href="https://msng.link/o/?d_sthr02=ig">
+
+                <i class="fa fa-instagram"></i>
+            </a>
+            
+            </li >
+            <li class="fflink">
+                <a href="https://msng.link/o/?7297834350=t g">
+                
+                <i class="fa fa-telegram"></i>
+            </a>
+            </li>
+            <li class="fflink">
+                <a href="mailto:dilipkumarsuthar176@gmail.com">
+                
+                <i class="fa fa-envolope"></i>
+            </a>
+            </li>
+
+        </div>
+
+    </div>
+</footer>
+</body>
+
+</html>

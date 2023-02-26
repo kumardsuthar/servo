@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="html2canvas.js"></script>
+
+
+    <title>Document</title>
+    <style>
+        #home-btn{
+            margin: 20px 20px;
+        }
+        #home-btn i{
+            font-size: 20px;
+            
+        }
+        #home-btn a{
+            color: white;
+            font-size: 18px;
+            padding: 2px 4px;
+            text-decoration: none;
+
+        }
+        #birthdayinvi{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* padding: 20px; */
+            width: 500px;
+            display: none;
+        }
+         #birthdaycard{
+            background-image: url('img/wihte and blue back 2.jpg');
+            height: fit-content;
+            padding: 30px;
+            box-sizing: border-box;
+            width: 500px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 10px;
+         }
+         .img{
+            height: 200px;
+            width: 200px;
+            text-align: center;
+         }
+        .footer
+        {
+            margin-top: 30px;
+        }
+        .fflink{
+            color: white;
+        }
+
+        li{
+            margin-bottom: 15px;
+        }
+        .inpdet{
+            margin: 20px 50px;
+        }
+        .btn{
+            display: block;
+            margin: 30px auto;
+        }
+    </style>
+
+        
+  <script type="text/javascript">
+
+        function downloadimage() {
+
+let r = `
+<div id="birthdaycard">
+            <div class="row bag">
+               <div class="col">
+                <img src="img/cake.png" alt="" class="img">
+                <p style="margin: 20px auto;">YOU ARE INVITED TO</p>
+                <h3 style="margin-bottom: 10px;">${birth.value}</h3>
+                <h2>Birthday</h2>
+                <h2>Party</h2>
+
+                <h4 style="margin:30px 50px 10px 50px;background-color: rgb(4, 4, 51);padding: 5px;color: white;">${date.value}st ${month.value} ${year.value} At ${time.value}</h4>
+
+                <h5>${address.value}</h5>
+
+                <p style="margin: 50px auto 10px auto;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id sit deleniti modi! Repellendus ratione cumque explicabo, adipisci ea voluptates incidunt, possimus eaque saepe error odio consequatur a. Odio, animi impedit.</p>
+               </div>
+            </div>
+        </div>
+`;
+var container = document.getElementById("birthdayinvi");
+container.innerHTML = r;
+
+container.style.cssText = "display:block";
+html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+    var link = document.createElement("a");
+    document.body.appendChild(link);
+    link.download = "html_image.png";
+    link.href = canvas.toDataURL();
+    link.target = '_blank';
+    link.click();
+    window.location.reload();
+    location.href="index.html"             
+});
+}
+
+</script>
+    
+</head>
+<body>
+
+    <div id="home-btn">
+        <button class="btn btn-danger"><i class="fa fa-home "><a href="index.html">Home</a></i></button>
+    </div>
+
+    <!-- <div class="container-fluid " id="headerbg">
+        <div class="row header my-4">
+            <div class="col-md-6 mx-5 logo col-12">
+                <span>
+                    <img src="logo.png" alt="logo" id="logoimg"> </span>
+                <span>
+                    <h4>servo</h4>
+                    <i class="fa fa-bars" id="menubtn"></i>
+                </span>
+            </div>
+            <div class="col-md-6" id="df">
+                <ul>
+                    <a href="index.html" class="link"> Home</a href="#">
+                    <a href="about.html" class="link">About Us</a href="#">
+                    <a href="sevices.html" class="link">Services</a href="#">
+                    <a href="contactus.html" class="link" id="clink">Contact Us</a href="#">
+                    <a href="#" class="slink"><i class="fa fa-instagram"></i></a href="#">
+                    <a href="#" class="slink"><i class="fa fa-telegram"></i></a href="#">
+                    <a href="#" class="slink"><i class="fa fa-whatsapp"></i></a href="#">
+
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="birthdayinvi">
+        
+    </div>
+
+    <div class="row inpdet">
+        <h3 style="margin-bottom: 20px;">Fill Below Details And Generate Birthday Invitation</h3>
+        <div class="col-12 col-sm-6">
+            <label for="birth" class="form-label">Enter name</label>
+            <input type="text" name="" id="birth" class="form-control">
+        </div>
+
+        <div class="col-12 col-sm-6">
+            <label for="address" class="form-label">Enter Your Address</label>
+            <input type="text" name="" id="address" class="form-control">
+        </div>
+
+        <div class="col-12 col-sm-3">
+            <label for="date" class="form-label">Enter Party date</label>
+            <input type="text" name="" id="date" class="form-control">
+        </div>
+
+        <div class="col-12 col-sm-3">
+            <label for="time" class="form-label">Enter Party time</label>
+            <input type="text" name="" id="time" class="form-control">
+        </div>
+
+        <div class="col-12 col-sm-3">
+            <label for="year" class="form-label">Enter year</label>
+            <input type="text" name="" id="year" class="form-control">
+        </div>
+
+        <div class="col-12 col-sm-3">
+            <label for="month" class="form-label">Enter month</label>
+            <input type="text" name="" id="month" class="form-control">
+        </div>
+
+
+    </div>
+
+    
+    <button onclick="downloadimage()" class="clickbtn btn btn-outline-primary my-3"><i class="fa fa-download"></i> Click To Download Birthday Invitation</button>
+    
+    <footer>
+        <div class="row footer">
+            <div class="col-md-4 col-12">
+                <h1 class="logof">servo</h1>
+                <p style="margin-top: 30px;padding: 0px 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam beatae porro ut tempore, quisquam, sit molestias qui architecto dolor facere, officia nobis iusto commodi doloremque minus. Sed perferendis adipisci itaque!
+                </p>
+            </div>
+            <div class="col-md-3 col-12 ls">
+                <h4 id="srh">Service</h4>
+                <p> <a href="certi.html" class="flink">certificate</a> <br> </p>
+                <p><a href="businesscard.html" class="flink">businesscard</a><br> </p>
+                <p><a href="idcardmain.html" class="flink">id card</a><br> </p>
+                <p><a href="javascript:void(0)" class="flink">Goverment card</a> <br></p>
+                <p><a href="invitationmain.html" class="flink">Invitation card</a> <br></p>
+                <p><a href="resume.html" class="flink">resume</a> <br></p>
+            </div>
+            <div class="col-md-2 col-12 ls">
+                <h4 style="margin-bottom: 20px;">Links</h4>
+                <p> <a href="index.html" class="flink">Home</a> <br> </p>
+                <p><a href="about.html" class="flink">About</a><br> </p>
+                <p><a href="contactus.html" class="flink">Contact us</a><br> </p>
+                <h4 style="margin:30px auto;">Address</h4>
+                <p>sumerpur</p>
+                <p>rajasthan pali (306902) </p>
+            </div>
+            <div class="col-md-2 col-12 ls">
+                <h4 id="sh">social media</h4>
+                <li class="fflink">
+                    <a href="https://wa.me/7297834350?text=what%20can%20i%20help%20you%20%3F">
+                        <i class="fa fa-whatsapp"></i>
+                    </a>
+                </li>
+                <li class="fflink">
+                    <a href="https://msng.link/o/?d_sthr02=ig">
+
+                    <i class="fa fa-instagram"></i>
+                </a>
+                
+                </li >
+                <li class="fflink">
+                    <a href="https://msng.link/o/?7297834350=t g">
+                    
+                    <i class="fa fa-telegram"></i>
+                </a>
+                </li>
+                <li class="fflink">
+                    <a href="mailto:dilipkumarsuthar176@gmail.com">
+                    
+                    <i class="fa fa-envolope"></i>
+                </a>
+                </li>
+
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

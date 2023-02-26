@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+
+
+  <script src="html2canvas.js"></script>
+
+
+  <!--  -->
+
+  <script type="text/javascript">
+
+
+
+    function downloadimage() {
+      let r=`
+      <div id="cid">
+            <div class="row">
+               <div class="col-12" id="top">
+                    <img src="img/busilogo.png" alt="" id="img1">
+                    <h4 style="margin-top:5px;margin-bottom: 10px;color: white;">${cname.value}</h4>
+               </div>
+
+               <div class="col-12" id="middel">
+                   <img src="img/user.png" alt="" id="img2">
+
+                   <h3 style="width: 100%;margin-top: 50px;">Your Name</h3>
+                   <h5>${ename.value}</h5>
+
+                   <p>ID NO :${id.value}</p>
+                   <P>Join date :${date.value}/${month.value}/${year.value}</P>
+                   <p>phone : ${phone.value}</p>
+               </div>
+               <div class="col-12" id="bottom">
+                   <i class="fa fa-barcode" style="color: black;font-size: 50px;"></i>
+               </div>
+
+            </div> 
+        </div>
+      `
+      
+      var container = document.getElementById("cidcard");
+      container.innerHTML = r;
+         
+        container.style.cssText="display:block";
+        html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+            var link = document.createElement("a");
+            document.body.appendChild(link);
+            link.download = "html_image.png";
+            link.href = canvas.toDataURL();
+            link.target = '_blank';
+            link.click();
+            window.location.reload();   
+            // location.href="index.html"             
+        });
+    }
+
+</script>
+  <!--  -->
+    <title>COMPANY ID CARD</title>
+
+    <style>
+        #home-btn{
+            margin: 20px 20px;
+        }
+        #home-btn i{
+            font-size: 20px;
+            
+        }
+        #home-btn a{
+            color: white;
+            font-size: 18px;
+            padding: 2px 4px;
+            text-decoration: none;
+
+        }
+        #cidcard{
+            display: flex;
+            justify-content: center;
+            width: 500px;
+            height:  fit-content;
+            display: none;
+            border-radius: 20px ;
+        }
+        #cid{
+            width: 500px;
+          margin-top: 30px;
+          background-color: rgb(225, 219, 219);
+          text-align: center;
+          height: fit-content;
+          padding:0px ;
+          border-radius: 20px;
+
+        }
+        #top{
+            background-color: black;
+            border-radius: 20px 20px 0 0 ;
+            width: 500px;
+            display: block;
+            margin: 0 auto;
+        }
+        #img1{
+            margin-top: 10px;
+            width: 70px;
+            height: 70px;
+        }
+        #img2{
+            height: 100px;
+            width: 100px;
+            float: left;
+            margin-left: 40px;
+            margin-top: -50px;
+            border-radius: 50px;
+        }
+        .fflink{
+            color: white;
+        }
+        li{
+            margin-bottom: 15px;
+        }
+        .details{
+            margin: 10px 50px;
+        }
+        .btn{
+            display: block;
+            margin: 20px auto;
+        }
+        /* .bor{
+           
+            border-top: 5px solid black;
+            width: 200px;
+        } */
+    </style>
+</head>
+<body>
+
+    <div id="home-btn">
+        <button class="btn btn-danger"><i class="fa fa-home "><a href="index.html">Home</a></i></button>
+    </div>
+
+    <!-- <div class="container-fluid " id="headerbg">
+        <div class="row header my-4">
+            <div class="col-md-6 mx-5 logo col-12">
+                <span>
+                    <img src="logo.png" alt="logo" id="logoimg"> </span>
+                <span>
+                    <h4>servo</h4>
+                    <i class="fa fa-bars" id="menubtn"></i>
+                </span>
+            </div>
+            <div class="col-md-6" id="df">
+                <ul>
+                    <a href="index.html" class="link"> Home</a href="#">
+                    <a href="about.html" class="link">About Us</a href="#">
+                    <a href="sevices.html" class="link">Services</a href="#">
+                    <a href="contactus.html" class="link" id="clink">Contact Us</a href="#">
+                    <a href="#" class="slink"><i class="fa fa-instagram"></i></a href="#">
+                    <a href="#" class="slink"><i class="fa fa-telegram"></i></a href="#">
+                    <a href="#" class="slink"><i class="fa fa-whatsapp"></i></a href="#">
+
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="cidcard">
+    </div>
+
+    <div>
+        <h2 style="margin: 2px 50px;">welcome</h2>
+        <h3 style="margin: 2px 50px;">Fill the below details and get your Company Id card</h3>
+
+        <div class="row details">
+            <div class="col-12 col-sm-6">
+                <label for="cname" class="form-label">Enter company name</label>
+                <input type="text" name="" id="cname" class="form-control">
+            </div>
+
+            <div class="col-12 col-sm-6">
+                <label for="ename" class="form-label">Enter your name</label>
+                <input type="text" name="" id="ename" class="form-control">
+            </div>
+
+            <div class="col-12 col-sm-3">
+                <label for="id" class="form-label">Enter your Id</label>
+                <input type="number" name="" id="id" class="form-control">
+            </div>
+            <div class="col-12 col-sm-3">
+                <label for="date" class="form-label">Enter Date</label>
+                <input type="number" name="" id="date" class="form-control">
+            </div>
+
+            <div class="col-12 col-sm-3">
+                <label for="month" class="form-label">Enter month</label>
+                <input type="number" name="" id="month" class="form-control">
+            </div>
+
+            <div class="col-12 col-sm-3">
+                <label for="year" class="form-label">Enter year</label>
+                <input type="number" name="" id="year" class="form-control">
+            </div>
+
+            <div class="col-12 col-sm-3">
+                <label for="phone" class="form-label">Enter mobile no.</label>
+                <input type="number" name="" id="phone" class="form-control">
+            </div>
+
+        </div>
+    </div>
+
+    <button onclick="downloadimage()" class="clickbtn btn btn-outline-primary "><i class="fa fa-download"> Click To Download Company idcard</i></button>
+
+    
+   
+    
+    <footer>
+        <div class="row footer">
+            <div class="col-md-4 col-12">
+                <h1 class="logof">servo</h1>
+                <p style="margin-top: 30px;padding: 0px 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam beatae porro ut tempore, quisquam, sit molestias qui architecto dolor facere, officia nobis iusto commodi doloremque minus. Sed perferendis adipisci itaque!
+                </p>
+            </div>
+            <div class="col-md-3 col-12 ls">
+                <h4 id="srh">Service</h4>
+                <p> <a href="certi.html" class="flink">certificate</a> <br> </p>
+                <p><a href="businesscard.html" class="flink">businesscard</a><br> </p>
+                <p><a href="idcardmain.html" class="flink">id card</a><br> </p>
+                <p><a href="javascript:void(0)" class="flink">Goverment card</a> <br></p>
+                <p><a href="invitationmain.html" class="flink">Invitation card</a> <br></p>
+                <p><a href="resume.html" class="flink">resume</a> <br></p>
+            </div>
+            <div class="col-md-2 col-12 ls">
+                <h4 style="margin-bottom: 20px;">Links</h4>
+                <p> <a href="index.html" class="flink">Home</a> <br> </p>
+                <p><a href="about.html" class="flink">About</a><br> </p>
+                <p><a href="contactus.html" class="flink">Contact us</a><br> </p>
+                <h4 style="margin:30px auto;">Address</h4>
+                <p>sumerpur</p>
+                <p>rajasthan pali (306902) </p>
+            </div>
+            <div class="col-md-2 col-12 ls">
+                <h4 id="sh">social media</h4>
+                <li class="fflink">
+                    <a href="https://wa.me/7297834350?text=what%20can%20i%20help%20you%20%3F">
+                        <i class="fa fa-whatsapp"></i>
+                    </a>
+                </li>
+                <li class="fflink">
+                    <a href="https://msng.link/o/?d_sthr02=ig">
+
+                    <i class="fa fa-instagram"></i>
+                </a>
+                
+                </li >
+                <li class="fflink">
+                    <a href="https://msng.link/o/?7297834350=t g">
+                    
+                    <i class="fa fa-telegram"></i>
+                </a>
+                </li>
+                <li class="fflink">
+                    <a href="mailto:dilipkumarsuthar176@gmail.com">
+                    
+                    <i class="fa fa-envolope"></i>
+                </a>
+                </li>
+
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

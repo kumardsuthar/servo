@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+
+
+  <script src="html2canvas.js"></script>
+
+<!--  -->
+<script type="text/javascript">
+
+
+
+    function downloadimage() {
+      let r=`
+      <div id="hcardfront">
+            <div class="row">
+              <div class="col-12" id="top">
+                <div id="logo">
+                    <img src="img/busilogo.png" alt="" id="logoimg">
+                    <p style="color: white;">${hname.value}</p>
+                </div>
+               
+              </div>
+              <div class="col-12" id="middel">
+                    <img src="img/user.png" alt="" id="img1">
+                  <div id="h5">
+                <h5 style="width: 100%;margin-bottom: 2px;color: white;">${yname.value}</h5>
+            </div>
+            <div id="p">
+                <p style="margin-bottom: 5px;color: white;" >${post.value}</p>
+            </div>
+          
+              </div>
+
+              <div class="col-12" id="bottom">
+                <div id="div1">
+                <p>License no</p> <p>${lno.value}</p>
+            </div>
+            <div id="div2">
+                <p>issue date</p> <p>${idate.value}/${imonth.value}/${iyear.value}</p>
+                </div>
+                <div id="div3">
+                <p>Expiration date</p><p>${edate.value}/${emonth.value}/${eyear.value}</p>
+                </div>
+                <div id="bardiv">
+                <img src="img/barcode.png" id="barimg">
+                <p style="margin-top: 30px;" id="barsign">Signature</p>
+                 </div>
+              </div>
+            </div>
+        </div>
+
+        
+      `
+      
+      var container = document.getElementById("hospitalid");
+      container.innerHTML = r;
+         
+        container.style.cssText="display:block";
+        html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+            var link = document.createElement("a");
+            document.body.appendChild(link);
+            link.download = "html_image.png";
+            link.href = canvas.toDataURL();
+            link.target = '_blank';
+            link.click();
+            window.location.reload();   
+            location.href="index.html"             
+        });
+    }
+
+// 
+// 
+
+
+function downloadimageb() {
+      let b=`
+      
+
+        <div id="hcardback">
+            <div class="row">
+                <div class="col-12" id="backtop">
+                  <div id="topbor">
+                      
+                  </div>
+                  <h5 style="margin-top: 20px;margin-left: 10px;">Term & Condition</h5>
+                  <ul>
+                    <li>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur fugiat voluptate tenetur corrupti amet vitae quisquam et provident facere.
+                    </li>
+                    
+                  </ul>
+                </div>
+                <div class="col-12" id="backmiddel">
+                     <div id="qrimg">
+                          <img src="img/barcode.png" alt="" id="img2">
+                     </div>
+                     <div id="sign">
+                        <p>your Signature</p>
+                     </div>
+            
+                </div>
+  
+                <div class="col-12" id="backbottom">
+                  <h4 style="margin-bottom: 30px;">${hname.value}</h4>
+                  <i class="fa fa-phone"></i><p>${phone.value}</p> <br> 
+                  <i class="fa fa-map"></i> <p>${location.value}</p> <br>
+  
+                </div>
+              </div>
+        </div>
+      `
+      
+      var container = document.getElementById("hospitalid");
+      container.innerHTML = b;
+         
+        container.style.cssText="display:block;border-radius:20px;";
+        html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+            var link = document.createElement("a");
+            document.body.appendChild(link);
+            link.download = "html_image.png";
+            link.href = canvas.toDataURL();
+            link.target = '_blank';
+            link.click();
+            window.location.reload();   
+            location.href="index.html"             
+        });
+    }
+
+</script>
+<!--  -->
+
+    <title>Hospital id card</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+        }
+        #home-btn{
+            margin: 20px 20px;
+        }
+        #home-btn i{
+            font-size: 20px;
+            
+        }
+        #home-btn a{
+            color: white;
+            font-size: 18px;
+            padding: 2px 4px;
+            text-decoration: none;
+
+        }
+       #hospitalid{
+            /* width: 740px; */
+            width: 350px;
+            padding:0;
+            display: flex;
+            justify-content: center;
+            flex-direction:row;
+            display: none;
+            border-radius: 20px;
+        }
+        #hcardfront{
+            width: 350px;
+            background-color: rgb(192, 185, 176);
+            border-radius: 0 0 10px 10px;
+            height: fit-content;
+            border-radius: 20px;
+            margin: 0 20px 0 0;
+
+            /* transform: translate(-50,-50); */
+        }
+        #top{
+            /* clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 0 0); */
+            background-color: rgb(8, 8, 45);
+            height: 50px;
+            width: 350px;
+            display: block;
+            border-radius: 0 20px 20px 0;
+
+            margin: 0 auto;
+        }
+        #logo{
+            margin:0 auto;
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+        }
+        #middel{
+            text-align: center;
+        }
+        
+        #h5{
+            background-color: rgb(9, 9, 55);
+            padding: 5px;
+            border-radius: 0px 20px 20px 0;
+            margin: 0 30px 0 0;
+        }
+        #p{
+            background-color: rgb(141, 141, 168);
+            padding: 5px;
+            border-radius: 20px 0 0 20px;
+            margin: 6px 0px 0 30px;
+        }
+        /* /* #logo img{
+            display: inline-block;
+            margin: auto auto;
+        } */
+        #logo p{
+             display: inline-block;
+             /* margin: auto; */
+             margin: auto 10px;
+        } 
+       
+        .fflink{
+            color: white;
+        }
+        li{
+            margin-bottom: 15px;
+        }
+        #img1{
+            height: 125px;
+            width: 125px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 62px;
+            /* margin-top: 55px; */
+            margin: 20px auto;
+            border-radius: 75px;
+        }
+        #bottom{
+            padding: 10px 90px;
+            margin-top: 10px;
+        }
+        #div1{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #div1 p:nth-child(2){
+            text-align: left;
+        }
+        #div2{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #div2 p:nth-child(2){
+            text-align: right;
+        }
+        #div3{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between
+            ;
+        }
+        #div3 p:nth-child(2){
+            text-align: left;
+        }
+         #bardiv{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          
+         }
+        #barimg{
+            margin-top: 10px;
+         
+            height: 50px;
+            width: 150px;
+            /* float: right; */
+   
+
+        }
+        
+        #hcardback{
+            width: 350px;
+            background-color: rgb(192, 185, 176);
+            border-radius: 0 0 10px 10px;
+            height: fit-content;
+            border-radius: 20px;
+            /* margin: 0 0 0 20px; */
+            /* transform: translate(-50,-50); */
+        }
+        #topbor{
+            height: 5px;
+            background-color: rgb(10, 10, 66);
+            margin-top:5px;
+            border-radius: 10px;
+        }
+        #backtop{
+            height: fit-content;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+        #backmiddel{
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding:0px 40px ;
+        }
+        #sign{
+            margin-top:50px;
+        }
+        #img2{
+            height: 50px;
+            margin-top: 30px;
+            width: 150px;
+        }
+        #backbottom{
+            margin:30px auto;
+            padding: 3px 40px;
+        }
+        #backbottom i{
+            display: inline-block;
+        }
+        
+        #backbottom p{
+            display: inline-block;
+        }
+        #details{
+            margin: 10px 50px;
+        }
+        .btn{
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="home-btn">
+        <button class="btn btn-danger"><i class="fa fa-home "><a href="index.html">Home</a></i></button>
+    </div>
+
+    <!-- <div class="container-fluid " id="headerbg">
+        <div class="row header my-4">
+            <div class="col-md-6 mx-5 logo col-12">
+                <span>
+                    <img src="logo.png" alt="logo" id="logoimg"> </span>
+                <span>
+                    <h4>servo</h4>
+                    <i class="fa fa-bars" id="menubtn"></i>
+                </span>
+            </div>
+            <div class="col-md-6" id="df">
+                <ul>
+                    <a href="index.html" class="link"> Home</a href="#">
+                    <a href="about.html" class="link">About Us</a href="#">
+                    <a href="sevices.html" class="link">Services</a href="#">
+                    <a href="contactus.html" class="link" id="clink">Contact Us</a href="#">
+                    <a href="#" class="slink"><i class="fa fa-instagram"></i></a href="#">
+                    <a href="#" class="slink"><i class="fa fa-telegram"></i></a href="#">
+                    <a href="#" class="slink"><i class="fa fa-whatsapp"></i></a href="#">
+
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="hospitalid">
+       
+    </div>
+
+    <div class="row" id="details">
+        <h3>Welcome</h3>
+        <h5>Fill below Details and get your hostpital id card</h5>
+        <div class="col-12 col-sm-6">
+           <label for="hname" class="form-label">Enter hostpital name</label>
+           <input type="text" name="" id="hname" class="form-control">
+        </div>
+        <div class="col-12 col-sm-6">
+            <label for="yname" class="form-label">Enter your name</label>
+            <input type="text" name="" id="yname" class="form-control">
+         </div>
+
+         <div class="col-12 col-sm-4">
+            <label for="post" class="form-label">Enter your post</label>
+            <input type="text" name="" id="post" class="form-control">
+         </div>
+
+         <div class="col-12 col-sm-2">
+            <label for="lno" class="form-label">Enter license no.</label>
+            <input type="text" name="" id="lno" class="form-control">
+         </div>
+         <div class="col-12 col-sm-2">
+            <label for="idate" class="form-label">Enter Issue date</label>
+            <input type="text" name="" id="idate" class="form-control">
+         </div>
+         <div class="col-12 col-sm-2">
+            <label for="imonth" class="form-label">Enter Issue month</label>
+            <input type="text" name="" id="imonth" class="form-control">
+         </div>
+         <div class="col-12 col-sm-2">
+            <label for="iyear" class="form-label">Enter Issue year</label>
+            <input type="text" name="" id="iyear" class="form-control">
+         </div>
+
+         <!--  -->
+         <div class="col-12 col-sm-2">
+            <label for="edate" class="form-label">Enter Expiry date</label>
+            <input type="text" name="" id="edate" class="form-control">
+         </div>
+         <div class="col-12 col-sm-2">
+            <label for="emonth" class="form-label">Enter Expiry month</label>
+            <input type="text" name="" id="emonth" class="form-control">
+         </div>
+         <div class="col-12 col-sm-2">
+            <label for="eyear" class="form-label">Enter Expiry year</label>
+            <input type="text" name="" id="eyear" class="form-control">
+         </div>
+
+         <div class="col-12 col-sm-3">
+            <label for="phone" class="form-label">Enter mobile no.</label>
+            <input type="number" name="" id="phone" class="form-control">
+         </div>
+         <div class="col-12 col-sm-3">
+            <label for="location" class="form-label">Enter Address</label>
+            <input type="text" name="" id="location" class="form-control">
+         </div>
+         
+    </div>
+
+    <button onclick="downloadimage()" class="clickbtn btn btn-outline-primary "><i class="fa fa-download"> Click To Download FRONTSIDE id</i></button>
+    <button onclick="downloadimageb()" class="clickbtn btn btn-outline-primary "><i class="fa fa-download"> Click To Download BACKSIDE id</i></button>
+
+    
+    <footer>
+        <div class="row footer">
+            <div class="col-md-4 col-12">
+                <h1 class="logof">servo</h1>
+                <p style="margin-top: 30px;padding: 0px 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam beatae porro ut tempore, quisquam, sit molestias qui architecto dolor facere, officia nobis iusto commodi doloremque minus. Sed perferendis adipisci itaque!
+                </p>
+            </div>
+            <div class="col-md-3 col-12 ls">
+                <h4 id="srh">Service</h4>
+                <p> <a href="certi.html" class="flink">certificate</a> <br> </p>
+                <p><a href="businesscard.html" class="flink">businesscard</a><br> </p>
+                <p><a href="idcardmain.html" class="flink">id card</a><br> </p>
+                <p><a href="javascript:void(0)" class="flink">Goverment card</a> <br></p>
+                <p><a href="invitationmain.html" class="flink">Invitation card</a> <br></p>
+                <p><a href="resume.html" class="flink">resume</a> <br></p>
+            </div>
+            <div class="col-md-2 col-12 ls">
+                <h4 style="margin-bottom: 20px;">Links</h4>
+                <p> <a href="index.html" class="flink">Home</a> <br> </p>
+                <p><a href="about.html" class="flink">About</a><br> </p>
+                <p><a href="contactus.html" class="flink">Contact us</a><br> </p>
+                <h4 style="margin:30px auto;">Address</h4>
+                <p>sumerpur</p>
+                <p>rajasthan pali (306902) </p>
+            </div>
+            <div class="col-md-2 col-12 ls">
+                <h4 id="sh">social media</h4>
+                <li class="fflink">
+                    <a href="https://wa.me/7297834350?text=what%20can%20i%20help%20you%20%3F">
+                        <i class="fa fa-whatsapp"></i>
+                    </a>
+                </li>
+                <li class="fflink">
+                    <a href="https://msng.link/o/?d_sthr02=ig">
+
+                    <i class="fa fa-instagram"></i>
+                </a>
+                
+                </li >
+                <li class="fflink">
+                    <a href="https://msng.link/o/?7297834350=t g">
+                    
+                    <i class="fa fa-telegram"></i>
+                </a>
+                </li>
+                <li class="fflink">
+                    <a href="mailto:dilipkumarsuthar176@gmail.com">
+                    
+                    <i class="fa fa-envolope"></i>
+                </a>
+                </li>
+
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>
